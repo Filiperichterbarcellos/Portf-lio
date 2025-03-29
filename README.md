@@ -1,4 +1,4 @@
-# Portf-lio
+# Portfolio
 
 O projeto consiste no desenvolvimento de uma plataforma web inspirada no Exevo Pan, um sistema amplamente utilizado na comunidade do jogo Tibia para análise de mercado, gerenciamento de personagens e outras funcionalidades voltadas para jogadores. O objetivo é criar uma solução interativa e moderna que forneça recursos avançados para os usuários, como estatísticas em tempo real, histórico de preços e busca otimizada.
 
