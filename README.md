@@ -8,7 +8,7 @@ Data de Entrega: 2025
 
 ##  Resumo
 
-Este projeto apresenta o desenvolvimento de uma plataforma web para jogadores de Tibia. Inspirado em ferramentas como o Exevo Pan, o sistema oferece análise de mercado, histórico de preços, rastreamento de bosses e estatísticas em tempo real. Utiliza tecnologias modernas como **Node.js** no back-end e **React.js** no front-end, integrando com APIs externas para consumo de dados. Aplica conceitos como arquitetura de software, design de interface e boas práticas de desenvolvimento.
+Este projeto apresenta o desenvolvimento de uma plataforma web para jogadores de Tibia. Inspirado nas ferramentas que já existe, o sistema oferece análise de mercado, histórico de preços, rastreamento de bosses e estatísticas em tempo real. Utiliza tecnologias modernas como **Node.js** no back-end e **React.js** no front-end, integrando com APIs externas para consumo de dados. Aplica conceitos como arquitetura de software, design de interface e boas práticas de desenvolvimento.
 
 ---
 
@@ -20,7 +20,7 @@ O Tibia é um dos MMORPGs mais antigos em atividade, com comunidade extremamente
 
 ### Justificativa
 
-Mesmo com soluções como Exevo Pan, há espaço para alternativas com melhor UX/UI, integração de funcionalidades e diferenciais competitivos.
+Mesmo com soluções como calculadoras, análise de marketing, há espaço para alternativas com melhor UX/UI, integração de funcionalidades e diferenciais competitivos, para ajudar novos jogadores a começarem no tibia.
 
 ### Objetivos
 
