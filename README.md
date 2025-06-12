@@ -1,4 +1,4 @@
-# 🧠 RFC - Sistema de Suporte Avançado para Jogadores de Tibia
+#  RFC - Sistema de Suporte Avançado para Jogadores de Tibia
 
 **Título do Projeto:** Sistema de Suporte Avançado para Jogadores de Tibia  
 **Nome do Estudante:** Filipe Richter Barcellos  
@@ -7,7 +7,7 @@
 
 ---
 
-## 📘 Resumo
+##  Resumo
 
 Este documento descreve o planejamento, escopo e especificações técnicas para o desenvolvimento de uma plataforma web destinada à comunidade do MMORPG Tibia. Inspirada em projetos como o Exevo Pan, a solução propõe funcionalidades como análise de mercado, histórico de preços, rastreamento de bosses e calculadoras de suporte ao jogador. Como diferencial central, o projeto incluirá uma **trilha interativa para iniciantes**, com foco em guiar novos jogadores em suas primeiras horas de jogo, minimizando frustração e promovendo retenção.
 
