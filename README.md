@@ -122,9 +122,9 @@ Desenvolvimento de um sistema web baseado em JavaScript fullstack, com Node.js e
 
 | Etapa        | Atividades                                    | Período   |
 |--------------|------------------------------------------------|-----------|
-| Portfólio I  | Modelagem, banco, autenticação e APIs básicas | Junho     |
-| Portfólio II | Frontend, integração de trilha e painel geral | Julho     |
-| Finalização  | Testes, refino da experiência, entrega final   | Agosto    |
+| Portfólio I  | Modelagem, banco, autenticação e APIs básicas | em breve     |
+| Portfólio II | Frontend, integração de trilha e painel geral | em breve     |
+| Finalização  | Testes, refino da experiência, entrega final  | em breve     |
 
 ---
 
