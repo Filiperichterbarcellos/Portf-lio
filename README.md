@@ -9,7 +9,10 @@
 
 ##  Resumo
 
-Este documento descreve o planejamento, escopo e especificações técnicas para o desenvolvimento de uma plataforma web destinada à comunidade do MMORPG Tibia. Inspirada em projetos como o Exevo Pan, a solução propõe funcionalidades como análise de mercado, histórico de preços, rastreamento de bosses e calculadoras de suporte ao jogador. Como diferencial central, o projeto incluirá uma **trilha interativa para iniciantes**, com foco em guiar novos jogadores em suas primeiras horas de jogo, minimizando frustração e promovendo retenção.
+Este projeto apresenta o desenvolvimento de uma plataforma web inteligente voltada para jogadores do MMORPG Tibia. Inspirada em ferramentas como o Exevo Pan, a plataforma oferece funcionalidades essenciais como análise de mercado, histórico de preços de itens, rastreamento de bosses, além de uma calculadora de conversão de Tibia Coins para Real. O diferencial proposto é um sistema exclusivo de **trilha para iniciantes**, que visa guiar novos jogadores com dicas de evolução, locais de caça, sugestões de quests e orientação sobre vocações, superando a ausência de onboarding existente no jogo original. 
+
+A plataforma será construída com **Node.js** no back-end e **React.js** no front-end, priorizando desempenho, modularidade e facilidade de manutenção. Além disso, será adotado o banco de dados **PostgreSQL** e a camada de estilo com **Tailwind CSS + shadcn/ui**. O projeto se propõe a aplicar práticas modernas de arquitetura de software, segurança, experiência do usuário e integração com APIs externas para oferecer uma solução robusta e acessível à comunidade Tibiana.
+
 
 ---
 
