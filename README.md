@@ -110,6 +110,20 @@ Desenvolvimento de um sistema web baseado em JavaScript fullstack, com Node.js e
 | DevOps        | GitHub, Vercel, Railway          |
 
 ---
+A escolha da stack tecnológica foi fundamentada em critérios como robustez, produtividade, comunidade ativa e compatibilidade com o modelo arquitetural adotado.
+
+- **Node.js (Express)**: escolhido para o back-end devido à sua leveza, escalabilidade e compatibilidade com arquiteturas baseadas em APIs REST. Sua natureza assíncrona permite lidar com múltiplas requisições de forma eficiente, o que é essencial em funcionalidades como consulta de mercado e rastreamento de bosses.
+
+- **React.js (com Tailwind CSS e shadcn/ui)**: no front-end, o React possibilita criação de interfaces modulares e reativas, com ótimo desempenho e manutenibilidade. Tailwind CSS e shadcn/ui foram incluídos para acelerar o desenvolvimento e garantir design responsivo com boa usabilidade.
+
+- **PostgreSQL**: banco de dados relacional que fornece segurança, integridade e alta performance para lidar com dados relacionais como usuários, alertas, itens, históricos de mercado e progresso da trilha.
+
+- **Prisma ORM**: para facilitar a comunicação entre o back-end e o banco de dados, promovendo tipagem, segurança e maior produtividade no desenvolvimento.
+
+- **Vercel (front) + Railway (back)**: plataformas modernas para deploy contínuo e escalável, com integração direta com GitHub.
+
+Essa stack oferece o equilíbrio ideal entre desempenho, curva de aprendizado e boas práticas modernas, além de estar alinhada com o objetivo do projeto: construir um sistema acessível, rápido e confiável.
+“A escolha dessa stack também visa facilitar a curva de aprendizado e adoção futura por parte da comunidade Tibiana e de desenvolvedores interessados em contribuir com o projeto.”
 
 ### 3.4 Considerações de Segurança
 
