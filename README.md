@@ -24,7 +24,7 @@ O Tibia é um jogo online lançado em 1997, inteiramente em inglês, com mínima
 
 ### 1.2 Justificativa
 
-Ferramentas existentes, como o Exevo Pan, oferecem suporte para jogadores avançados, mas não contemplam a experiência de onboarding. O projeto propõe a criação de uma plataforma completa e acessível, com **um módulo dedicado à progressão de iniciantes**, promovendo uma experiência mais guiada, agradável e educativa para novos usuários.
+Ferramentas existentes, como o Exevo Pan, oferecem suporte para jogadores avançados, mas não contemplam a experiência de onboarding. O projeto propõe a criação de uma plataforma acessível, com **um módulo dedicado à progressão de iniciantes**, promovendo uma experiência mais guiada, agradável e educativa para novos usuários.
 
 ### 1.3 Objetivos
 
