@@ -178,3 +178,89 @@ Assinatura: _____________________________
 **Considerações Professor/a 3:**  
 Nome: __________________________________  
 Assinatura: _____________________________  
+
+RFC – Tibia Pulse: A Sophisticated Support System for Players of Tibia
+
+1. Introdução
+
+Tibia é um dos MMORPGs mais antigos ainda em atividade, mas sua curva de aprendizado inicial pode ser bastante desafiadora para novos jogadores. Muitos desistem nas primeiras horas de jogo por falta de orientação, suporte ou recursos adequados.
+
+O Tibia Pulse surgiu como uma solução digital que visa oferecer ferramentas de apoio, trilhas de evolução e cálculos úteis, atuando como um suporte avançado tanto para jogadores iniciantes quanto para veteranos.
+
+Este documento descreve o escopo do Produto Mínimo Viável (MVP), as funcionalidades já implementadas, os requisitos técnicos, a metodologia aplicada e os próximos passos no desenvolvimento do projeto.
+
+2. Objetivos
+
+2.1 Objetivo Geral
+
+Criar um sistema web para auxiliar jogadores de Tibia por meio de trilhas personalizadas, calculadoras, dashboards e integração com APIs externas, oferecendo um suporte completo e acessível.
+
+2.2 Objetivos Específicos
+
+Implementar autenticação via Google e Discord utilizando NextAuth e Supabase;
+
+Disponibilizar um guia/trilha para iniciantes, abordando quests, evolução e locais de caça;
+
+Criar uma calculadora de Tibia Coin para conversão entre gold e moeda brasileira;
+
+Estruturar um repositório público com boas práticas de desenvolvimento, inspirado em projetos como o Exevo Pan;
+
+Adotar metodologias ágeis com foco em Kanban, versionamento contínuo e integração com Vercel para deploy rápido.
+
+3. Escopo
+
+3.1 Funcionalidades já implementadas (MVP)
+
+Projeto estruturado em Next.js com TypeScript;
+
+Autenticação via OAuth2 (Google e Discord) utilizando NextAuth e Supabase;
+
+Deploy inicial feito na Vercel;
+
+Repositório público no GitHub seguindo boas práticas de desenvolvimento.
+
+3.2 Funcionalidades previstas para as próximas iterações
+
+Calculadora de Tibia Coin para conversão de gold para reais;
+
+Trilha de evolução com dicas de quests e locais de caça para iniciantes;
+
+Dashboard com relatórios de progresso do personagem;
+
+Integração com APIs do Tibia para dados atualizados.
+
+4. Metodologia
+
+O projeto segue princípios de desenvolvimento ágil com foco em:
+
+Kanban: organização das tarefas via GitHub Projects;
+
+Controle de versão: Git e GitHub como ferramentas principais;
+
+Deploy contínuo: via Vercel, permitindo testes rápidos e integração contínua;
+
+Referência acadêmica: alinhamento com as diretrizes do Portfolio Playbook II da Católica SC.
+
+5. Requisitos
+
+5.1 Requisitos Funcionais
+
+O sistema deve permitir login via Google e Discord;
+
+Deve conter uma estrutura básica de navegação que permita expansão futura;
+
+Deve oferecer suporte à integração de módulos adicionais, como a calculadora de Tibia Coin e trilha de evolução.
+
+5.2 Requisitos Não Funcionais
+
+Segurança: autenticação via OAuth2 com expiração de tokens;
+
+Escalabilidade: uso de Next.js e deploy via Vercel;
+
+Usabilidade: interface inspirada em fansites de Tibia, garantindo familiaridade;
+
+Disponibilidade: repositório público para colaboração e transparência.
+
+6. Conclusão
+
+O projeto Tibia Pulse já conta com uma base sólida, incluindo autenticação e repositório estruturado, representando um MVP funcional. O desenvolvimento seguirá com a adição de novas funcionalidades como calculadora, trilhas e dashboards, atendendo tanto às necessidades dos jogadores quanto às exigências acadêmicas da disciplina.
