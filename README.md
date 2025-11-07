@@ -123,13 +123,6 @@ Desenvolvimento de um sistema web baseado em JavaScript fullstack, com **Node.js
 
 ---
 
-## 4. Próximos Passos  
-
-O desenvolvimento seguirá em fases. Após o MVP inicial, serão priorizadas a implementação da **calculadora de Tibia Coin**, a **trilha de evolução para iniciantes** e, posteriormente, o **dashboard de progresso**.  
-As etapas seguintes focarão em refino da experiência do usuário, testes e integração com APIs externas.  
-
----
-
 ## 5. Referências  
 
 - [TibiaData API](https://docs.tibiadata.com/)  
