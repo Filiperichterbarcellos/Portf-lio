@@ -1,137 +1,216 @@
-# RFC – Sistema de Suporte Avançado para Jogadores de Tibia  
+# RFC – Tibia Pulse 1.0.1
 
-**Título do Projeto:** Sistema de Suporte Avançado para Jogadores de Tibia  
-**Nome do Estudante:** Filipe Richter Barcellos  
+**Título:** Sistema de Suporte Avançado para Jogadores de Tibia  
+**Autor:** Filipe Richter Barcellos  
 **Curso:** Engenharia de Software  
-**Data de Entrega:** 2025  
+**Entrega:** 2025  
 
 ---
 
-##  Resumo  
+##  Resumo
 
-Este projeto apresenta o desenvolvimento de uma plataforma web inteligente voltada para jogadores do MMORPG **Tibia**. Inspirada em ferramentas como o **Exevo Pan**, a plataforma oferece funcionalidades essenciais como:  
+Plataforma web que centraliza dados de personagens, rastreamento de bosses, calculadoras e um **Guide** com recomendações de quests/hunts e progresso salvo por usuário.  
+Inspirado em ferramentas como **Exevo Pan**, mas com foco em **onboarding** e **acompanhamento contínuo**.
 
-- Análise de mercado  
-- Histórico de preços de itens  
-- Rastreamento de bosses  
-- Calculadora de conversão de Tibia Coins para Real  
+**Stack principal:**
 
-O diferencial proposto é um sistema exclusivo de **trilha para iniciantes**, que visa guiar novos jogadores com dicas de evolução, locais de caça, sugestões de quests e orientação sobre vocações, superando a ausência de onboarding existente no jogo original.  
-
-A plataforma será construída com **Node.js** no back-end e **React.js** no front-end, priorizando desempenho, modularidade e facilidade de manutenção. Além disso, será adotado o banco de dados **PostgreSQL** e a camada de estilo com **Tailwind CSS + shadcn/ui**.  
-
----
-
-## 1. Introdução  
-
-### 1.1 Contexto  
-O Tibia é um jogo online lançado em 1997, inteiramente em inglês, com mínima orientação para jogadores novatos. Após o level 8, o jogador é lançado ao mundo sem direção definida. Embora isso seja parte da “magia” do jogo, representa uma barreira de entrada significativa, especialmente para novos jogadores.  
-
-### 1.2 Justificativa  
-Ferramentas existentes, como o **Exevo Pan**, oferecem suporte para jogadores avançados, mas não contemplam a experiência de onboarding. O projeto propõe a criação de uma plataforma acessível, com **um módulo dedicado à progressão de iniciantes**, promovendo uma experiência mais guiada, agradável e educativa para novos usuários.  
-
-### 1.3 Objetivos  
-
-**Objetivo Principal:**  
-Desenvolver uma plataforma de suporte a jogadores de Tibia com foco em dados de mercado e onboarding de novos jogadores.  
-
-**Objetivos Secundários:**  
-- Criar ferramentas de análise de preços, rastreamento de bosses e calculadoras  
-- Implementar uma trilha interativa para iniciantes com guias de evolução, quests e glossário  
-- Oferecer visualização e personalização da jornada do jogador  
-- Utilizar tecnologias modernas para garantir escalabilidade, usabilidade e desempenho  
+- **Frontend:** React 18 (Vite + Tailwind CSS + shadcn/ui)
+- **Backend:** Node.js + Express
+- **Banco:** PostgreSQL + Prisma
+- **Infra/Deploy:** Azure (Static Web App + App Service)
+- **Proxy de scraping:** Azure Functions (TrackerProxy) para contornar bloqueios (403) em rastreamento.
 
 ---
 
-## 2. Descrição do Projeto  
+##  Contexto e Motivação
 
-### 2.1 Tema do Projeto  
-Desenvolvimento de um sistema web baseado em JavaScript fullstack, com **Node.js** e **React**, inspirado no **Exevo Pan**, acrescido de um **Guia Interativo para Iniciantes no Tibia**.  
-
-### 2.2 Problemas a Resolver  
-- Falta de onboarding no jogo original  
-- Escassez de ferramentas acessíveis a jogadores novatos  
-- Carência de integração entre dados de mercado e informações úteis em um só lugar  
-- Dificuldade de aprendizado para iniciantes e frustração nas primeiras horas de jogo  
-
-### 2.3 Limitações  
-- O MVP não incluirá aplicativo mobile nativo  
-- Recursos como sistema de notificações e login via Discord serão tratados como melhorias futuras  
-- Cobertura inicial restrita a um conjunto de servidores selecionados  
+- Tibia oferece pouca orientação para iniciantes; após o level 8 o jogador fica sem direção.
+- Ferramentas atuais não cobrem **onboarding** nem **trilhas guiadas**.
+- Necessidade de uma experiência única, com:
+  - Dados consolidados
+  - Progresso salvo por usuário
+  - UX moderna e responsiva
 
 ---
 
-## 3. Especificação Técnica  
+##  Objetivos
 
-### 3.1 Requisitos de Software  
+**Objetivo principal**
 
-**Requisitos Funcionais (RF):**  
-- RF01: Visualizar preços de itens por servidor  
-- RF02: Exibir histórico de preços com média e variação  
-- RF03: Consultar status de bosses e timers  
-- RF04: Utilizar calculadora de conversão de Tibia Coins para moedas do jogo e reais  
-- RF05: Realizar login/autenticação via Google  
-- RF06: Favoritar bosses ou itens para rastrear  
-- RF07: Acessar trilha de iniciante com sugestões de up, quests e equipamentos  
-- RF08: Marcar progresso na trilha de iniciante e salvar preferências  
+- Plataforma de suporte com:
+  - Dados de mercado/bosses
+  - Onboarding via **Guide** (trilha de quests/hunts com progresso salvo)
 
-**Requisitos Não Funcionais (RNF):**  
-- RNF01: Resposta rápida nas APIs (<200ms)  
-- RNF02: Interface mobile-first e acessível  
-- RNF03: TLS obrigatório para todas as conexões  
-- RNF04: Proteção contra injeções, XSS e armazenamento seguro com hash  
-- RNF05: Alta disponibilidade (>=99,5%)  
+**Objetivos secundários**
+
+- Consultar status de personagens (TibiaData + scraping de `tibia.com` + GuildStats).
+- Rastrear bosses e permitir **favoritar**.
+- Implementar calculadoras (ex.: coins, loot) e worlds com fallback.
+- Autenticação simplificada via **Google** (login via Discord removido).
+- Guide com recomendações de quests/hunts e progresso salvo (**GuideProgress**).
+- UI estável, sem sumir listas quando chamadas à API falharem.
 
 ---
 
-### 3.2 Considerações de Design  
+##  Escopo e Limitações
 
-**Arquitetura:**  
-- Padrão **MVC** com separação entre controle, serviço e apresentação  
-- **APIs RESTful** com rotas desacopladas para dados públicos e privados  
-- **Prisma ORM** para facilitar manutenção e migrações no banco  
+**Incluído no escopo:**
 
-**Modelagem em Níveis (Modelo C4):**  
-- **Nível de contexto:** jogador interage com frontend via browser  
-- **Nível de contêiner:** frontend (React), backend (Node.js + Express), banco (PostgreSQL)  
-- **Nível de componentes:** controllers, serviços, módulos de autenticação e rastreamento  
-- **Nível de código:** separação de rotas, DTOs e middlewares  
+- Busca de personagens.
+- Bosses com favoritos.
+- Lista de worlds com fallback.
+- Calculadoras (coins, loot etc.).
+- Guide com progresso por usuário.
+- Blog com changelog e posts (conteúdo estático).
 
----
+**Excluído no MVP:**
 
-### 3.3 Stack Tecnológica  
+- App mobile nativo.
+- Notificações push.
+- Login via Discord (removido).
+- Integração com TibiaTrade/Bazar.
 
-| Camada        | Tecnologia                      |
-|---------------|----------------------------------|
-| **Frontend**  | React 18, Tailwind, shadcn/ui    |
-| **Backend**   | Node.js + Express                |
-| **ORM**       | Prisma                           |
-| **Banco**     | PostgreSQL                       |
-| **APIs**      | TibiaData API + scraping         |
-| **Auth**      | OAuth2 via Google                |
-| **DevOps**    | GitHub, Vercel, Railway          |  
+**Dados de tracker:**
+
+- Uso de **proxy próprio** em Azure Functions (`TrackerProxy`) para contornar erros **403** em integrações como GuildStats.
 
 ---
 
-### 3.4 Considerações de Segurança  
+##  Arquitetura
 
-- Uso de **OAuth2/OIDC** para evitar manipulação de senhas diretamente  
-- Todas as requisições protegidas com **TLS (HTTPS)**  
-- Inputs validados no frontend e backend  
-- **Hashing com bcrypt** em qualquer credencial salva  
-- Proteções **CSRF** e **CORS** configuradas via middleware  
+**Frontend**
+
+- React 18 + Vite
+- Tailwind CSS + shadcn/ui
+- React Router
+- Domínio: `www.tibiapulse.com.br`
+- Deploy em **Azure Static Web Apps**
+
+**Backend**
+
+- Node.js + Express
+- Swagger para documentação (`/docs`)
+- CORS configurado
+- Deploy em **Azure App Service**
+
+**Banco de Dados**
+
+- PostgreSQL (Azure)
+- ORM: Prisma
+
+**Proxy / Scraping**
+
+- Azure Functions (HTTP trigger)
+- Uso de `TRACKER_PROXY_URL` para GuildStats e outros endpoints bloqueados
+
+**Infra / Padrões**
+
+- Azure Static Web Apps (frontend) + App Service (API)
+- CI/CD com GitHub Actions + `prisma migrate deploy`
+- Padrão **MVC**:
+  - Controllers
+  - Services
+  - Routes
+  - DTOs tipados
+  - Middlewares (auth, error handler)
 
 ---
 
-## 5. Referências  
+##  Modelagem (Prisma – `schema.prisma`)
 
-- [TibiaData API](https://docs.tibiadata.com/)  
-- [React.js](https://reactjs.org/)  
-- [Node.js](https://nodejs.org/en/docs)  
-- [Prisma ORM](https://www.prisma.io/docs)  
-- [PostgreSQL](https://www.postgresql.org/docs/)  
-- [shadcn/ui](https://ui.shadcn.com/)  
-- [Exevo Pan GitHub](https://github.com/xandjiji)  
+**User**
+
+- `id`
+- `email`
+- `name`
+- `mainCharacter`
+- `provider` (GOOGLE)
+- `favorites` (relação)
+- `guideProgress` (relação)
+
+**Favorite**
+
+- `id`
+- `userId`
+- `type` (`BOSS` / `AUCTION`)
+- `key`
+- `snapshot` (JSON)
+- Constraint única: `(userId, type, key)`
+
+**GuideProgress**
+
+- `id`
+- `userId`
+- `type` (`QUEST` / `HUNT`)
+- `slug`
+- `status` (`NOT_STARTED` / `IN_PROGRESS` / `DONE`)
+- `updatedAt`
 
 ---
+
+##  Fluxos Principais
+
+### Autenticação
+
+- OAuth2 via **Google**
+- Tokens **JWT**
+- Provedor ativo: apenas Google (Discord removido)
+
+### Characters
+
+- Consulta via **TibiaData** + scraping de `tibia.com`
+- Fallback via:
+  - Proxy público (AllOrigins/Jina)
+  - **TrackerProxy** (Azure Functions) para GuildStats:
+    - abas de `history`
+    - `deaths`
+    - outras métricas relevantes
+
+### Bosses
+
+- Kill statistics via TibiaData
+- Possibilidade de **favoritar bosses** (salvo em `Favorite.snapshot`)
+
+### Worlds
+
+- Lista de worlds com fallback se API principal falhar (`ERR_BAD_RESPONSE`)
+
+### Guide
+
+- Endpoints:
+  - `GET /api/guide/quests`
+  - `GET /api/guide/hunts`
+  - `GET /api/guide/progress` (auth)
+  - `PUT /api/guide/progress` (auth)
+- Não exige filtro por personagem.
+- Front mantém as listas mesmo se a chamada de progresso falhar.
+- Progresso também fica visível em **"Minha conta"**.
+
+### Blog
+
+- Posts em `src/data/blog.ts`
+- Contém changelog da versão **1.0.1**.
+
 ---
+
+##  Endpoints (principais)
+
+```http
+GET  /api/characters/:name
+
+GET  /api/bosses
+GET  /api/bosses/killstats/:world
+
+GET  /api/worlds
+GET  /api/worlds/:name
+
+GET  /api/guide/quests
+GET  /api/guide/hunts
+GET  /api/guide/progress       (auth)
+PUT  /api/guide/progress       (auth)
+
+POST /api/auth/google
+POST /api/auth/callback        (fluxo OAuth)
+
+GET  /health
+GET  /docs                     (Swagger)
